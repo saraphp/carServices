@@ -6,7 +6,7 @@
  * Time: 09:28 م
  */
 
-namespace Assesment\Classes\Services;
+namespace Assessment\Services;
 
 
 class OilChange
@@ -39,6 +39,6 @@ class OilChange
      */
     public function feedBack(){
 
-        return 'is interested in carrying out Oil Change';
+        return 'interested in carrying out Oil Change';
     }
 }

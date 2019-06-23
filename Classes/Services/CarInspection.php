@@ -6,7 +6,7 @@
  * Time: 09:27 م
  */
 
-namespace Assesment\Classes;
+namespace Assessment\Services;
 
 
 class CarInspection
@@ -15,9 +15,11 @@ class CarInspection
     protected $customerName;
     protected $cost;
 
-    public function __construct($customerName="", $services = array()) {
+    public function __construct($customerName = "", $services = array()) {
+
         $this->customerName = $customerName;
         $this->services = $services;
+        $this->cost =50;
 
     }
 
@@ -41,7 +43,7 @@ class CarInspection
      * @return int
      */
     public function totalCost() {
-        $total = 0;
+        $total = $this->getCost();
         foreach($this->services as $service) {
             $total += $service->getCost();
         }
@@ -56,5 +58,21 @@ class CarInspection
     public function feedBack(){
 
         return $this->customerName .' is interested in Basic Inspection';
+    }
+
+    /**
+     * @return string
+     */
+    public function totalFeedBack(){
+
+        if(!$this->services){
+            return $this->feedBack();
+        }
+        $message =$this->customerName .' ';
+        foreach($this->services as $service) {
+
+            $message .= $service->feedBack();
+        }
+        return $message;
     }
 }

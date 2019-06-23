@@ -6,7 +6,7 @@
  * Time: 09:28 م
  */
 
-namespace Assesment\Classes\Services;
+namespace Assessment\Services;
 
 
 class TireRotation
@@ -36,6 +36,6 @@ class TireRotation
 
     public function feedBack(){
 
-        return 'is interested in carrying out Tire Rotation';
+        return 'interested in carrying out Tire Rotation';
     }
 }
